@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test #1</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Neucha|Open+Sans:300,400,700" rel="stylesheet">
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="main-screen">
+		<nav>
+			<button class="close"></button>
+			<a href="#" class="south-korea">Южная Корея</a><br>
+			<a href="#" class="norway">Норвегия</a><br>
+			<a href="#" class="finland">Финляндия</a><br>
+			<a href="#" class="russia">Россия</a>
+		</nav>
+		<div class="email">
+			<button class="close-contacts"></button>
+			<a href="mailto:mar.byckova@gmail.com">mar.byckova@gmail.com</a>
+		</div>
+		<p class="main-hidden-tittle">Страны</p>
+		<button class="location"></button>
+		<button class="contacts"></button>
+		<div class="main-title">
+			<span class="i-letter letter">и</span><span class="n-letter letter">н</span><span class="f-letter letter">ф</span><span class="o-letter letter">о</span><span class="g-letter letter">г</span><span class="r-letter letter">р</span><span class="a-letter letter">а</span><span class="f-letter2 letter">ф</span><span class="i-letter2 letter">и</span><span class="k-letter letter">к</span><span class="a-letter2 letter">а</span>
+		</div>
+
+		<div class="main-screen-banner">	
+		</div>
+		<div class="main-screen-content">
+			<div class="information">
+				<p>Кликните на значок<img src="img/location.png" alt="icon">в правом верхнем углу и выберите страну. Вы узнаете основную информацию о выбранном государстве, например:</p>
+				<ul>
+					<li><span >Язык</span></li>
+					<li><span>Столица</span></li>
+					<li><span>Население</span></li>
+					<li><span>Валюта</span></li>
+					<li><span>Религия</span></li>
+					<li><span>Популярные профессии</span></li>
+					<li><span>Стоит посетить</span></li>
+				</ul>
+			</div>
+			<div class="services">
+				<a href="https://www.booking.com/index.ru.html"target="_blank" class="travell-service"><img src="img/booking.jpg" alt="booking.com"></a>
+				<a href="https://www.aviasales.ru/"target="_blank" class="travell-service"><img src="img/aviasales.png" alt="aviasales"></a>
+				<a href="https://www.skyscanner.ru"target="_blank" class="travell-service"><img src="img/skyscanner.png" alt="skyscanner"></a>
+				<a href="https://www.tripadvisor.ru/"target="_blank" class="travell-service"><img src="img/Apps-Tripadvisor-icon.png" alt="Tripadvisor"></a>
+				<a href="https://www.momondo.ru"target="_blank" class="travell-service"><img src="img/momondo.png" alt="momondo"></a>
+				<a href="https://www.airbnb.ru/" target="_blank" class="travell-service"><img src="img/airbnb.png" alt="airbnb"></a>
+				
+			</div>
+		</div>
+		<div class="main-screen-scroll"></div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			setTimeout ("$('.main-screen-scroll').fadeIn('slow');",2000);
+			
+			
+			$(document).on('click', '.main-screen-scroll', function(){
+			$('.main-screen-scroll').fadeOut();
+			$('.main-title').css('padding-top','30px');
+			$('.main-title').css('font-size','30px');
+			setTimeout ("$('.main-hidden-tittle').show('slow');",300);
+			setTimeout ("$('.main-screen-banner').slideDown(650);",100);
+			setTimeout ("$('.location').show('slow');",300);
+			setTimeout ("$('.contacts').show('slow');",300);
+			setTimeout ("$('.main-screen-content').css('visibility','visible');", 500);
+				
+			}); 
+			
+			$(document).on('click', '.location', function(){
+				$('nav').show('slow');
+				$('.location').hide();
+			});
+			
+			$(document).on('click', '.close', function(){
+				$('nav').hide('slow');
+				$('.location').show();
+				
+			});
+				$(document).on('click', '.contacts', function(){
+				$('.email').show('slow');
+				$('.contacts').hide();
+			});
+			
+			$(document).on('click', '.close-contacts', function(){
+				$('.email').hide('slow');
+				$('.contacts').show();
+				
+			});
+				
+				$(document).mouseup(function(e){
+					var div = $('.email');
+					if(!div.is(e.target) && div.has(e.target).length === 0) {
+							div.hide('slow');
+							$('.contacts').show();
+							}
+				});
+			
+				$(document).mouseup(function(e){
+					var container = $('nav');
+					if(!container.is(e.target) && container.has(e.target).length === 0) {
+							container.hide('slow');
+							$('.location').show();
+							}
+				});
+
+			
+		});
+		
+	</script>
+</body>
+</html>
