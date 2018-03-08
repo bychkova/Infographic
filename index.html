@@ -12,27 +12,64 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="main-screen">
-		<nav>
-			<button class="close"></button>
-			<a href="#" class="south-korea">Южная Корея</a><br>
-			<a href="#" class="norway">Норвегия</a><br>
-			<a href="#" class="finland">Финляндия</a><br>
-			<a href="#" class="russia">Россия</a>
-		</nav>
-		<div class="email">
-			<button class="close-contacts"></button>
-			<a href="mailto:mar.byckova@gmail.com">mar.byckova@gmail.com</a>
-		</div>
-		<p class="main-hidden-tittle">Страны</p>
-		<button class="location"></button>
-		<button class="contacts"></button>
-		<div class="main-title">
+
+	<div class="banner">
+		<div class="name">
 			<span class="i-letter letter">и</span><span class="n-letter letter">н</span><span class="f-letter letter">ф</span><span class="o-letter letter">о</span><span class="g-letter letter">г</span><span class="r-letter letter">р</span><span class="a-letter letter">а</span><span class="f-letter2 letter">ф</span><span class="i-letter2 letter">и</span><span class="k-letter letter">к</span><span class="a-letter2 letter">а</span>
 		</div>
+		<div class="scroll"></div>
+	</div>
 
-		<div class="main-screen-banner">	
-		</div>
+	<div class="main-screen">
+		<header>
+			<nav>
+				<button class="location"></button>
+				<button class="close-location"></button>
+				<a href="#" class="south-korea">Южная Корея</a><br>
+				<a href="#" class="norway">Норвегия</a><br>
+				<a href="#" class="finland">Финляндия</a><br>
+				<a href="#" class="russia">Россия</a>
+			</nav>
+			<div class="title">
+				<h1>Инфографика</h1>
+				<p class="main-hidden-tittle">Страны</p>
+			</div>
+			<div class="email">
+				<button class="contacts"></button>
+				<button class="close-contacts"></button>
+				<a href="mailto:mar.byckova@gmail.com">mar.byckova@gmail.com</a>
+			</div>
+		</header>
+		<main>
+			<div class="background-img"></div>
+			<div class="content">
+				<div class="information">
+					<p>Кликните на значок<img src="img/location.png" alt="icon">в правом верхнем углу и выберите страну. Вы узнаете основную информацию о выбранном государстве, например:</p>
+					<ul>
+						<li><span >Язык</span></li>
+						<li><span>Столица</span></li>
+						<li><span>Население</span></li>
+						<li><span>Валюта</span></li>
+						<li><span>Религия</span></li>
+						<li><span>Популярные профессии</span></li>
+						<li><span>Стоит посетить</span></li>
+					</ul>
+				</div>
+				<div class="services">
+					<a href="https://www.booking.com/index.ru.html"target="_blank" class="travell-service"><img src="img/booking.jpg" alt="booking.com"></a>
+					<a href="https://www.aviasales.ru/"target="_blank" class="travell-service"><img src="img/aviasales.png" alt="aviasales"></a>
+					<a href="https://www.skyscanner.ru"target="_blank" class="travell-service"><img src="img/skyscanner.png" alt="skyscanner"></a>
+					<a href="https://www.tripadvisor.ru/"target="_blank" class="travell-service"><img src="img/Apps-Tripadvisor-icon.png" alt="Tripadvisor"></a>
+					<a href="https://www.momondo.ru"target="_blank" class="travell-service"><img src="img/momondo.png" alt="momondo"></a>
+					<a href="https://www.airbnb.ru/" target="_blank" class="travell-service"><img src="img/airbnb.png" alt="airbnb"></a>
+
+				</div>
+			</div>
+		</main>
+	</div>
+	
+		<!--
+		
 		<div class="main-screen-content">
 			<div class="information">
 				<p>Кликните на значок<img src="img/location.png" alt="icon">в правом верхнем углу и выберите страну. Вы узнаете основную информацию о выбранном государстве, например:</p>
@@ -56,31 +93,30 @@
 				
 			</div>
 		</div>
-		<div class="main-screen-scroll"></div>
-	</div>
+		
+	</div>-->
 	<script>
 		$(document).ready(function(){
-			setTimeout ("$('.main-screen-scroll').fadeIn('slow');",2000);
+			
+			/*scroll btn time out*/
+			setTimeout ("$('.banner .scroll').fadeIn('slow');",2000);
 			
 			
-			$(document).on('click', '.main-screen-scroll', function(){
-			$('.main-screen-scroll').fadeOut();
-				
+/*			$(document).on('click', '.main-screen-scroll', function(){
+				$('.main-screen-scroll').fadeOut();		
+				$('.main-title').css('font-size','30px');
+				setTimeout ("$('.main-hidden-tittle').show('slow');",300);
+				setTimeout ("$('.main-screen-banner').slideDown(650);",100);
+				setTimeout ("$('.location').show('slow');",300);
+				setTimeout ("$('.contacts').show('slow');",300);
+				setTimeout ("$('.main-screen-content').css('visibility','visible');", 500);	
 
-				
-			$('.main-title').css('font-size','30px');
-			setTimeout ("$('.main-hidden-tittle').show('slow');",300);
-			setTimeout ("$('.main-screen-banner').slideDown(650);",100);
-			setTimeout ("$('.location').show('slow');",300);
-			setTimeout ("$('.contacts').show('slow');",300);
-			setTimeout ("$('.main-screen-content').css('visibility','visible');", 500);	
-				
-			var currentWidth = $('body').width();
-			if(currentWidth<750){
-				$('.main-title').css('padding-top','80px');
-				}else{
-					$('.main-title').css('padding-top','30px');
-				}
+				var currentWidth = $('body').width();
+				if(currentWidth<750){
+					$('.main-title').css('padding-top','80px');
+					}else{
+						$('.main-title').css('padding-top','30px');
+					}
 			}); 
 			
 			$(document).on('click', '.location', function(){
@@ -119,7 +155,7 @@
 						$('.location').show();
 						}
 			});
-
+			*/
 			
 		});
 		
