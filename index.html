@@ -17,28 +17,28 @@
 		<div class="name">
 			<span class="i-letter letter">и</span><span class="n-letter letter">н</span><span class="f-letter letter">ф</span><span class="o-letter letter">о</span><span class="g-letter letter">г</span><span class="r-letter letter">р</span><span class="a-letter letter">а</span><span class="f-letter2 letter">ф</span><span class="i-letter2 letter">и</span><span class="k-letter letter">к</span><span class="a-letter2 letter">а</span>
 		</div>
-		<div class="scroll"></div>
+		<a href="#main-screen" class="scroll"></a>
 	</div>
 
-	<div class="main-screen">
+	<div class="main-screen" id="main-screen">
 		<header>
 			<nav>
-				<button class="location"></button>
-				<button class="close-location"></button>
+				<button class="close"></button>
 				<a href="#" class="south-korea">Южная Корея</a><br>
 				<a href="#" class="norway">Норвегия</a><br>
 				<a href="#" class="finland">Финляндия</a><br>
 				<a href="#" class="russia">Россия</a>
 			</nav>
+			<button class="location nav-btn"></button>
 			<div class="title">
 				<h1>Инфографика</h1>
-				<p class="main-hidden-tittle">Страны</p>
+				<p class="hidden-tittle">Страны</p>
 			</div>
 			<div class="email">
-				<button class="contacts"></button>
-				<button class="close-contacts"></button>
+				<button class="close"></button>
 				<a href="mailto:mar.byckova@gmail.com">mar.byckova@gmail.com</a>
 			</div>
+			<button class="contacts nav-btn"></button>
 		</header>
 		<main>
 			<div class="background-img"></div>
@@ -66,6 +66,9 @@
 				</div>
 			</div>
 		</main>
+		<footer>
+			<a href="mailto:mar.byckova@gmail.com">mar.byckova@gmail.com</a>
+		</footer>
 	</div>
 	<script>
 		$(document).ready(function(){
@@ -73,8 +76,41 @@
 			/*scroll btn time out*/
 			setTimeout ("$('.banner .scroll').fadeIn('slow');",2000);
 			
+			/*btn to main-screen*/
+			$(document).on('click', '.banner .scroll', function(event){
+				event.preventDefault();
+				var id = $(this).attr('href');
+				var top = $(id).offset().top;
+				$('body,html').animate({scrollTop: top}, 1000);
+			})
 			
-/*			$(document).on('click', '.main-screen-scroll', function(){
+			/*location and contacts btn*/
+			$(document).on('click', '.nav-btn', function(){
+				$(this).prev().show('slow');
+				$(this).hide('slow');
+			})
+			
+			/*close side-menu btn*/
+			$(document).on('click', '.close', function(){
+				$(this).parent().hide('slow');
+				$(this).parent().next().show('slow');
+				
+			})
+			
+			/*click out of nav*/
+			$(document).mouseup(function(e){
+				var div = $('.nav-btn').prev();
+				if(!div.is(e.target) && div.has(e.target).length === 0) {
+						div.hide('slow');
+						$('.nav-btn').show();
+						}
+			});
+			
+			
+		});
+			
+		/*	
+
 				$('.main-screen-scroll').fadeOut();		
 				$('.main-title').css('font-size','30px');
 				setTimeout ("$('.main-hidden-tittle').show('slow');",300);
@@ -90,47 +126,9 @@
 						$('.main-title').css('padding-top','30px');
 					}
 			}); 
-			
-			$(document).on('click', '.location', function(){
-				$('nav').show('slow');
-				$('.location').hide();
-			});
-			
-			$(document).on('click', '.close', function(){
-				$('nav').hide('slow');
-				$('.location').show();
-				
-			});
-				$(document).on('click', '.contacts', function(){
-				$('.email').show('slow');
-				$('.contacts').hide();
-			});
-			
-			$(document).on('click', '.close-contacts', function(){
-				$('.email').hide('slow');
-				$('.contacts').show();
-				
-			});
-				
-			$(document).mouseup(function(e){
-				var div = $('.email');
-				if(!div.is(e.target) && div.has(e.target).length === 0) {
-						div.hide('slow');
-						$('.contacts').show();
-						}
-			});
-			
-			$(document).mouseup(function(e){
-				var container = $('nav');
-				if(!container.is(e.target) && container.has(e.target).length === 0) {
-						container.hide('slow');
-						$('.location').show();
-						}
-			});
-			*/
-			
-		});
-		
+
+	
+			*/	
 	</script>
 </body>
 </html>

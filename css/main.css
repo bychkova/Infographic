@@ -160,6 +160,37 @@ div.main-screen {
   /*end main-content style*/ }
   div.main-screen header {
     position: relative; }
+    div.main-screen header button.location {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      background: url("../img/location.png") no-repeat;
+      -webkit-background-size: contain;
+              background-size: contain;
+      border: none;
+      outline: none;
+      cursor: pointer; }
+      @media (max-width: 750px) {
+        div.main-screen header button.location {
+          top: 10px;
+          left: 20px; } }
+    div.main-screen header button.contacts {
+      width: 37px;
+      height: 30px;
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      background: url("../img/contacts.png") no-repeat;
+      -webkit-background-size: contain;
+              background-size: contain;
+      border: none;
+      outline: none;
+      cursor: pointer; }
+      @media (max-width: 750px) {
+        div.main-screen header button.contacts {
+          visibility: hidden; } }
     div.main-screen header nav {
       position: absolute;
       width: 300px;
@@ -168,20 +199,9 @@ div.main-screen {
       padding-top: 20vh;
       padding-left: 50px;
       -webkit-box-sizing: border-box;
-              box-sizing: border-box; }
-      div.main-screen header nav button.location {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 20px;
-        left: 30px;
-        background: url("../img/location.png") no-repeat;
-        -webkit-background-size: contain;
-                background-size: contain;
-        border: none;
-        outline: none;
-        cursor: pointer; }
-      div.main-screen header nav button.close-location {
+              box-sizing: border-box;
+      display: none; }
+      div.main-screen header nav button.close {
         position: absolute;
         top: 20px;
         left: 30px;
@@ -230,24 +250,33 @@ div.main-screen {
       font-family: "Neucha", cursive;
       font-size: 30px;
       letter-spacing: 10px;
-      padding-top: 50px; }
-    div.main-screen header .title p.main-hidden-tittle {
+      padding-top: 30px; }
+      @media (max-width: 750px) {
+        div.main-screen header .title h1 {
+          letter-spacing: 0px;
+          padding-top: 20px; } }
+    div.main-screen header .title p.hidden-tittle {
       position: absolute;
       left: -webkit-calc(50vw + 140px);
       left: calc(50vw + 140px);
-      top: 40px;
+      top: 20px;
       padding: 2px 5px 5px 5px;
       background: #1d7ada;
       color: white;
       text-transform: lowercase;
       font-size: 16px;
       letter-spacing: 2px;
-      width: 68px;
-      height: 16px;
       line-height: 16px;
       -webkit-border-radius: 2px;
               border-radius: 2px;
       z-index: 0; }
+      @media (max-width: 750px) {
+        div.main-screen header .title p.hidden-tittle {
+          top: 10px;
+          left: -webkit-calc(50vw + 90px);
+          left: calc(50vw + 90px);
+          letter-spacing: 1px;
+          font-size: 14px; } }
     div.main-screen header div.email {
       position: absolute;
       right: 0;
@@ -259,20 +288,9 @@ div.main-screen {
       padding-left: 50px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      z-index: 1; }
-      div.main-screen header div.email button.contacts {
-        width: 37px;
-        height: 30px;
-        position: absolute;
-        top: 25px;
-        right: 30px;
-        background: url("../img/contacts.png") no-repeat;
-        -webkit-background-size: contain;
-                background-size: contain;
-        border: none;
-        outline: none;
-        cursor: pointer; }
-      div.main-screen header div.email button.close-contacts {
+      z-index: 1;
+      display: none; }
+      div.main-screen header div.email button.close {
         position: absolute;
         top: 20px;
         right: 30px;
@@ -295,10 +313,13 @@ div.main-screen {
   div.main-screen main .background-img {
     width: 100vw;
     height: 50vh;
-    margin-top: 50px;
+    margin-top: 20px;
     background: url("../img/main-screen-banner.jpg") no-repeat;
     -webkit-background-size: cover;
             background-size: cover; }
+    @media (max-width: 750px) {
+      div.main-screen main .background-img {
+        margin-top: 20px; } }
   div.main-screen main .content {
     display: -webkit-box;
     display: -webkit-flex;
@@ -309,9 +330,20 @@ div.main-screen {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 20px 50px; }
+    @media (max-width: 750px) {
+      div.main-screen main .content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin: 20px; } }
     div.main-screen main .content div.information {
       margin-top: 20px;
       width: 55%; }
+      @media (max-width: 750px) {
+        div.main-screen main .content div.information {
+          width: 100%; } }
       div.main-screen main .content div.information p {
         text-align: justify;
         line-height: 25px; }
@@ -348,6 +380,10 @@ div.main-screen {
       -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
               flex-wrap: wrap; }
+      @media (max-width: 750px) {
+        div.main-screen main .content div.services {
+          width: 100%;
+          height: auto; } }
       div.main-screen main .content div.services a {
         width: 70px;
         height: 70px;
@@ -355,3 +391,18 @@ div.main-screen {
         margin-top: 20px; }
         div.main-screen main .content div.services a img {
           width: 100%; }
+
+/*footer style*/
+footer {
+  border-top: 1px solid grey;
+  padding: 10px;
+  text-align: center; }
+  footer a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Neucha", cursive;
+    cursor: pointer; }
+  footer a:hover {
+    text-decoration: underline; }
+
+/*end footer style*/
