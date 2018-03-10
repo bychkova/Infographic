@@ -56,7 +56,7 @@
 					</ul>
 				</div>
 				<div class="services">
-					<a href="https://www.booking.com/index.ru.html"target="_blank" class="travell-service"><img src="img/booking.jpg" alt="booking.com"></a>
+					<a href="https://www.booking.com/index.ru.html"target="_blank" class="travell-service"><img src="img/booking.png" alt="booking.com"></a>
 					<a href="https://www.aviasales.ru/"target="_blank" class="travell-service"><img src="img/aviasales.png" alt="aviasales"></a>
 					<a href="https://www.skyscanner.ru"target="_blank" class="travell-service"><img src="img/skyscanner.png" alt="skyscanner"></a>
 					<a href="https://www.tripadvisor.ru/"target="_blank" class="travell-service"><img src="img/Apps-Tripadvisor-icon.png" alt="Tripadvisor"></a>
@@ -106,29 +106,14 @@
 						}
 			});
 			
+			/*page animation*/
+			$(document).on('click', '.banner .scroll', function(){
+				
+				setTimeout ("$('.hidden-tittle').show();",800);
+				$('.background-img').show();
+			})
 			
 		});
-			
-		/*	
-
-				$('.main-screen-scroll').fadeOut();		
-				$('.main-title').css('font-size','30px');
-				setTimeout ("$('.main-hidden-tittle').show('slow');",300);
-				setTimeout ("$('.main-screen-banner').slideDown(650);",100);
-				setTimeout ("$('.location').show('slow');",300);
-				setTimeout ("$('.contacts').show('slow');",300);
-				setTimeout ("$('.main-screen-content').css('visibility','visible');", 500);	
-
-				var currentWidth = $('body').width();
-				if(currentWidth<750){
-					$('.main-title').css('padding-top','80px');
-					}else{
-						$('.main-title').css('padding-top','30px');
-					}
-			}); 
-
-	
-			*/	
 	</script>
 </body>
 </html>

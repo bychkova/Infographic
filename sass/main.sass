@@ -1,0 +1,381 @@
+$tittle-font: "Neucha", cursive;
+$main-font: 'Open Sans', sans-serif;
+$dark: #767676;
+$light: #d9d9d9;
+$white: #ffffff;
+
+
+/*@mixin for-phone-only
+	@media (max-width: 425px){@content;}
+	@mixin for-tablet-up
+	@media (min-width: 426px){@content;}
+	@mixin for-desktop-up
+	@media (min-width: 769px){@content;}
+	@mixin for-desktop-large
+	@media (min-width: 1141px){@content;}*/
+
+@mixin mobile-layout
+	@media (max-width: 750px){@content;}
+@mixin large-screen-layout
+	@media (min-width: 1000px){@content;}
+
+*
+	padding: 0;
+	margin: 0;
+
+body
+	font-family: $main-font;
+	font-size: 14px;
+	min-width: 300px;
+
+/*banner style*/
+
+@keyframes letter
+	0%
+		font-size: 50px;
+	25%
+		font-size: 70px;
+	50%
+		font-size: 30px;
+	100%
+		font-size: 50px;
+
+@keyframes i-letter
+	0%
+		font-size: 50px;
+	25%
+		font-size: 80px;
+	50%
+		font-size: 20px;
+	100%
+		font-size: 50px;
+
+@keyframes up-n-down
+	from
+		bottom: 20px;
+	to
+		bottom: 35px;
+
+.banner
+	min-width: 100vw;
+	min-height: 100vh;
+	.name
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 50px;
+		font-family: $tittle-font;
+		padding-top: 40vh;
+		position: relative;
+		transition: 3s;
+	span.letter
+		display: inline-block;
+		position: absolute;
+	span.i-letter
+		left: calc(50vw - 150px)
+		animation: letter 3s;
+	span.n-letter
+		left: calc(50vw - 125px)
+		animation: i-letter 3s;
+	span.f-letter
+		left: calc(50vw - 100px)
+		animation: letter 3s;	
+	span.o-letter
+		left: calc(50vw - 65px)
+		animation: i-letter 3s;	
+	span.g-letter
+		left: calc(50vw - 40px)
+		animation: letter 3s;	
+	span.r-letter
+		left: calc(50vw - 15px)
+		animation: i-letter 3s;	
+	span.a-letter
+		left: calc(50vw + 10px)
+		animation: letter 3s;	
+	span.f-letter2
+		left: calc(50vw + 35px)
+		animation: i-letter 3s;	
+	span.i-letter2
+		left: calc(50vw + 70px)
+		animation: letter 3s;	
+	span.k-letter
+		left: calc(50vw + 95px)
+		animation: i-letter 3s;	
+	span.a-letter2
+		left: calc(50vw + 120px)
+		animation: letter 3s;
+	.scroll
+		display: none;
+		width: 60px;
+		height: 77px;
+		background: url("../img/scroll-arrow.png") no-repeat;
+		background-size: contain;
+		position: absolute;
+		bottom: 20px;
+		left: calc(50vw - 30px);
+		animation: up-n-down 0.8s infinite alternate;
+
+/*end banner style*/
+
+@keyframes left-to-right
+	from
+		width: 0px;
+	to
+		width: 55px;
+
+@keyframes fade-out
+	from
+		width: 200vh;
+		height: 50vh;
+	to
+		width: 100vw;
+		height: 50vh;
+
+div.main-screen
+	height: 100vh;
+	//display: none;
+	/*header and navigation style*/
+	header
+		position: relative;
+		button.location
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 20px;
+			left: 30px;
+			background: url("../img/location.png") no-repeat;
+			background-size: contain;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			//display: none;
+			@include mobile-layout
+				top: 10px;
+				left: 20px;
+		button.contacts
+			width: 37px;
+			height: 30px;
+			position: absolute;
+			top: 25px;
+			right: 30px;
+			background: url("../img/contacts.png") no-repeat;
+			background-size: contain;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			//display: none;
+			@include mobile-layout
+				visibility: hidden;
+		nav
+			position: absolute;
+			width: 300px;
+			height: 100vh;
+			background: rgba(0,0,0,0.9);
+			padding-top: 20vh;
+			padding-left: 50px;
+			box-sizing: border-box;
+			display: none;
+			z-index: 1;
+
+			button.close
+				position: absolute;
+				top: 20px;
+				left: 30px;
+				width: 30px;
+				height: 30px;
+				background: url("../img/cross.png") no-repeat;
+				background-size: cover;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			a
+				display: inline-block;
+				position: relative;
+				text-decoration: none;
+				color: #fff;
+				font-family: $tittle-font;
+				font-size: 24px;
+				margin-top: 20px;
+			a::after
+				display: block;
+				content: "";
+				width: 50px;
+				height: 38px;
+				position: absolute;
+				top: -13px;
+				right: -55px;
+				background: url("../img/sprite-flags.png") no-repeat;
+				opacity: 0;
+				transition: 1s;
+			a:hover::after
+				opacity: 1;
+			a.south-korea::after
+				background-position: -10px -63px;
+			a.norway::after
+				background-position: -10px -118px;
+			a.finland::after
+				background-position: -10px -7px;
+			a.russia::after
+				background-position: -10px -174px;
+		.title
+			h1
+				text-transform: uppercase;
+				text-align: center;
+				font-family: $tittle-font;
+				font-size: 30px;
+				letter-spacing: 10px;
+				padding-top: 30px;
+				@include mobile-layout
+					letter-spacing: 0px;
+					padding-top: 20px;
+			p.hidden-tittle
+				position: absolute;
+				left: calc(50vw + 137px);
+				top: 23px;
+				padding: 2px 5px 5px 5px;
+				background: #1d7ada;
+				color: white;
+				text-transform: lowercase;
+				width: 55px;
+				letter-spacing: 1px;
+				font-size: 14px;
+				line-height: 16px;
+				border-radius: 2px;
+				z-index: 0;
+				//transition: 1s;
+				animation: left-to-right linear 0.5s;
+				display: none;
+				@include mobile-layout
+					top: 10px;
+					left: calc(50vw + 90px);
+					
+		div.email
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 300px;
+			height: 100vh;
+			background: rgba(0,0,0,0.9);
+			padding-top: 40vh;
+			padding-left: 50px;
+			box-sizing: border-box;
+			z-index: 1;
+			display: none;
+			
+			button.close
+				position: absolute;
+				top: 20px;
+				right: 30px;
+				width: 30px;
+				height: 30px;
+				background: url("../img/cross.png") no-repeat;
+				background-size: cover;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			a
+				text-decoration: none;
+				color: #fff;
+				font-family: $tittle-font;
+				font-size: 24px;
+				cursor: pointer;
+			a:hover
+				text-decoration: underline;
+
+	/*end header and navigation style*/
+
+	/*main-content style*/
+	main
+		.background-img
+			width: 100vw;
+			height: 50vh;
+			margin-top: 20px;
+			background: url("../img/main-screen-banner.jpg") no-repeat;
+			background-size: cover;
+			animation: fade-out linear 1.5s;
+			display: none;
+			@include mobile-layout
+				margin-top: 20px;
+		.content
+			display: flex;
+			justify-content: space-between;
+			margin: 20px 50px;
+			@include large-screen-layout
+				margin-left: 15%;
+				margin-right: 15%;
+			//visibility: hidden;
+			@include mobile-layout
+				flex-direction: column;
+				margin: 20px;
+			div.information
+				margin-top: 20px;
+				width: 60%;
+				@include mobile-layout
+					width: 100%;
+				p
+					text-align: justify;
+					line-height: 25px;
+				img
+					width: 25px;
+					height: 25px;
+					margin: 0 10px;
+					vertical-align: bottom;
+				ul
+					column-count: 3;
+					column-gap: 50px;
+					list-style: square;
+					margin-top: 20px;
+					margin-left: 20px;
+					li
+						color: #1d7ada;
+						span
+							color: #000;
+			div.services
+				width: 270px;
+				height: 180px;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				@include mobile-layout
+					width: 100%;
+					height: auto;
+				a
+					width: 70px;
+					height: 70px;
+					margin-left: 20px;
+					margin-top: 20px;
+					img
+						width: 100%;
+	
+	/*end main-content style*/
+
+/*footer style*/
+
+footer
+	border-top: 1px solid grey;
+	padding: 10px;
+	text-align: center;
+	@include mobile-layout
+		padding-bottom: 30px;
+	a
+		text-decoration: none;
+		color: #000;
+		font-family: $tittle-font;
+		cursor: pointer;
+	a:hover
+		text-decoration: underline;
+
+
+/*end footer style*/
+
+
+
+
+
+
+
+
+
+
+
+
+

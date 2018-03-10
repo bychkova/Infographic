@@ -12,7 +12,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  min-width: 300px; }
 
 /*banner style*/
 @-webkit-keyframes letter {
@@ -76,9 +77,9 @@ body {
     font-family: "Neucha", cursive;
     padding-top: 40vh;
     position: relative;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
-    transition: 1s; }
+    -webkit-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s; }
   .banner span.letter {
     display: inline-block;
     position: absolute; }
@@ -152,6 +153,33 @@ body {
             animation: up-n-down 0.8s infinite alternate; }
 
 /*end banner style*/
+@-webkit-keyframes left-to-right {
+  from {
+    width: 0px; }
+  to {
+    width: 55px; } }
+@keyframes left-to-right {
+  from {
+    width: 0px; }
+  to {
+    width: 55px; } }
+
+@-webkit-keyframes fade-out {
+  from {
+    width: 200vh;
+    height: 50vh; }
+  to {
+    width: 100vw;
+    height: 50vh; } }
+
+@keyframes fade-out {
+  from {
+    width: 200vh;
+    height: 50vh; }
+  to {
+    width: 100vw;
+    height: 50vh; } }
+
 div.main-screen {
   height: 100vh;
   /*header and navigation style*/
@@ -200,7 +228,8 @@ div.main-screen {
       padding-left: 50px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      display: none; }
+      display: none;
+      z-index: 1; }
       div.main-screen header nav button.close {
         position: absolute;
         top: 20px;
@@ -257,26 +286,28 @@ div.main-screen {
           padding-top: 20px; } }
     div.main-screen header .title p.hidden-tittle {
       position: absolute;
-      left: -webkit-calc(50vw + 140px);
-      left: calc(50vw + 140px);
-      top: 20px;
+      left: -webkit-calc(50vw + 137px);
+      left: calc(50vw + 137px);
+      top: 23px;
       padding: 2px 5px 5px 5px;
       background: #1d7ada;
       color: white;
       text-transform: lowercase;
-      font-size: 16px;
-      letter-spacing: 2px;
+      width: 55px;
+      letter-spacing: 1px;
+      font-size: 14px;
       line-height: 16px;
       -webkit-border-radius: 2px;
               border-radius: 2px;
-      z-index: 0; }
+      z-index: 0;
+      -webkit-animation: left-to-right linear 0.5s;
+              animation: left-to-right linear 0.5s;
+      display: none; }
       @media (max-width: 750px) {
         div.main-screen header .title p.hidden-tittle {
           top: 10px;
           left: -webkit-calc(50vw + 90px);
-          left: calc(50vw + 90px);
-          letter-spacing: 1px;
-          font-size: 14px; } }
+          left: calc(50vw + 90px); } }
     div.main-screen header div.email {
       position: absolute;
       right: 0;
@@ -316,7 +347,10 @@ div.main-screen {
     margin-top: 20px;
     background: url("../img/main-screen-banner.jpg") no-repeat;
     -webkit-background-size: cover;
-            background-size: cover; }
+            background-size: cover;
+    -webkit-animation: fade-out linear 1.5s;
+            animation: fade-out linear 1.5s;
+    display: none; }
     @media (max-width: 750px) {
       div.main-screen main .background-img {
         margin-top: 20px; } }
@@ -330,6 +364,10 @@ div.main-screen {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin: 20px 50px; }
+    @media (min-width: 1000px) {
+      div.main-screen main .content {
+        margin-left: 15%;
+        margin-right: 15%; } }
     @media (max-width: 750px) {
       div.main-screen main .content {
         -webkit-box-orient: vertical;
@@ -340,7 +378,7 @@ div.main-screen {
         margin: 20px; } }
     div.main-screen main .content div.information {
       margin-top: 20px;
-      width: 55%; }
+      width: 60%; }
       @media (max-width: 750px) {
         div.main-screen main .content div.information {
           width: 100%; } }
@@ -397,6 +435,9 @@ footer {
   border-top: 1px solid grey;
   padding: 10px;
   text-align: center; }
+  @media (max-width: 750px) {
+    footer {
+      padding-bottom: 30px; } }
   footer a {
     text-decoration: none;
     color: #000;
