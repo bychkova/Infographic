@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+main.country {
+  height: -webkit-calc(100vh - 123px);
+  height: calc(100vh - 123px);
+  margin-top: 20px;
+  background: -webkit-radial-gradient(circle, #cbfbfb, #90e0da);
+  background: -o-radial-gradient(circle, #cbfbfb, #90e0da);
+  background: radial-gradient(circle, #cbfbfb, #90e0da);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  font-family: "Yanone Kaffeesatz", sans-serif; }
+
+main.country > div {
+  width: 31%; }
+
+.flag-and-map {
+  text-align: center; }
+  .flag-and-map img.flag {
+    width: 90%;
+    margin-bottom: 50px; }
+  .flag-and-map img.map {
+    width: 100%; }
+
+span.number {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 0;
+  height: 0;
+  border-width: 37px 15px 18px;
+  border-style: solid;
+  border-color: #009dd1 #009dd1 transparent; }
+
+span.number::after {
+  display: block;
+  content: "1";
+  position: absolute;
+  top: -36px;
+  left: -6px;
+  color: #fff;
+  font-size: 30px; }
+
+h2 {
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 35px;
+  color: #605F60; }
+
+h3 {
+  color: #605F60;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px; }
+
+.population {
+  margin: 20px 0; }
+  .population p {
+    color: #009dd1;
+    font-size: 30px; }
+  .population img {
+    margin-top: 10px;
+    width: 100%; }
+
+.religion p {
+  color: #009dd1;
+  font-size: 20px; }
+
+.religion h3 {
+  margin-bottom: 10px; }
+
+.religion span.number::after {
+  content: "2"; }
+
+.religion .temporary {
+  border: 1px solid black;
+  margin-top: 20px;
+  height: 150px; }
