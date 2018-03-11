@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/country.css">
 	<link href="https://fonts.googleapis.com/css?family=Neucha|Open+Sans:300,400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,400,700&amp;subset=cyrillic" rel="stylesheet">
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,10 +17,11 @@
 	<header>
 		<nav>
 			<button class="close"></button>
-			<a href="South-Korea.html" class="south-korea">Южная Корея</a><br>
-			<a href="#" class="norway">Норвегия</a><br>
-			<a href="#" class="finland">Финляндия</a><br>
-			<a href="#" class="russia">Россия</a>
+			<a href="South-Korea.html" class="country south-korea">Южная Корея</a><br>
+			<a href="#" class="country norway">Норвегия</a><br>
+			<a href="#" class="country finland">Финляндия</a><br>
+			<a href="#" class="country russia">Россия</a>
+			<a href="index.html" class="home">&#8592;  Главная</a>
 		</nav>
 		<button class="location nav-btn"></button>
 		<div class="title">
@@ -33,6 +34,7 @@
 		</div>
 		<button class="contacts nav-btn"></button>
 	</header>
+	<div class="wrapper">
 	<main class="country">
 		<div class="flag-and-map">
 			<img src="img/south-korea-flag.png" alt="South Korea Flag" class="flag">
@@ -41,13 +43,13 @@
 		<div class="country-name">
 			<h2>Южная Корея</h2>
 			<div class="population">
-				<span class="number"></span>
+				<span class="number-flag"></span>
 				<h3>Население</h3>
 				<p>50,962,578</p>
 				<img src="img/population.png" alt="">
 			</div>
 			<div class="religion">
-				<span class="number"></span>
+				<span class="number-flag"></span>
 				<h3>Религия</h3>
 				<p>Нет официальной религии</p>
 				<div class="temporary">
@@ -57,29 +59,30 @@
 		</div>
 		<div class="infographics">
 			<div class="capital">
-				<span>3</span>
+				<span class="number"><span>3</span></span>
 				<h4>Столица</h4>
 				<p>Сеул</p>
 			</div>
 			<div class="currency">
-				<span>4</span>
+				<span class="number"><span>4</span></span>
 				<h4>Валюта</h4>
 				<p>Корейская вона</p>
 			</div>
 			<div class="language">
-				<span>5</span>
+				<span class="number"><span>5</span></span>
 				<h4>Язык</h4>
 				<p>Корейский</p>
 			</div>
 			<div class="landmark">
-				<span>6</span>
-				<h4>Стоит посетить</h4>
+				<span class="number"><span>6</span></span>
+				<h4>Посмотреть</h4>
 				<p>Дворец Чангдеокгунг</p>
 				<p>Остров Чеджу</p>
 				<p>Национальный парк Сораксан</p>
 			</div>
 		</div>
 	</main>
+	</div>
 	<script src="js/main-js.js"></script>
 </body>
 </html>

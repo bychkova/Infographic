@@ -249,7 +249,7 @@ header {
       font-family: "Neucha", cursive;
       font-size: 24px;
       margin-top: 20px; }
-    header nav a::after {
+    header nav a.country::after {
       display: block;
       content: "";
       width: 50px;
@@ -262,7 +262,7 @@ header {
       -webkit-transition: 1s;
       -o-transition: 1s;
       transition: 1s; }
-    header nav a:hover::after {
+    header nav a.country:hover::after {
       opacity: 1; }
     header nav a.south-korea::after {
       background-position: -10px -63px; }

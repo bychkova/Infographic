@@ -14,25 +14,69 @@ $country-font: 'Yanone Kaffeesatz', sans-serif;
 	padding: 0;
 	margin: 0;
 
+nav
+	a.home
+		position: absolute;
+		left: 50px;
+		bottom: 30px;
+	a.home:hover
+		text-decoration: underline;
+
+.wrapper
+	background: radial-gradient(circle, #f4f9fa, #cae3e4);
+	
 main.country
-	height: calc(100vh - 123px);
-	margin-top: 20px;
-	background: radial-gradient(circle, #cbfbfb, #90e0da);
+	height: calc(100vh - 173px);
+	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
+	padding-bottom: 80px;
 	font-family: $country-font;
+	@include large-screen-layout
+		width: 1000px;
+		margin: 10px auto;
+	@include mobile-layout
+		height: auto;
+		max-width: 500px;
+		margin: 10px auto;
+		flex-direction: column;
 main.country>div
 	width: 31%;
-.flag-and-map
+	@include mobile-layout
+		width: 100%;
+main div.flag-and-map
 	text-align: center;
+	width: 220px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	@include mobile-layout
+		opacity: 0.1;
+		position: fixed;
+		padding-top: 50px;
 	img.flag
-		width: 90%;
+		width: 100%;
 		margin-bottom: 50px;
+		border: 1px solid #605F60;
+		@include mobile-layout
+			width: 220px;
+			border: none;
+			margin-left: calc(100% - 110px;)
 	img.map
 		width:  100%;
+		@include mobile-layout
+			width: 220px;
+			margin-left: calc(100% - 110px;)
 
-span.number
+.country-name
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	@include mobile-layout
+		margin-bottom: 20px;
+
+span.number-flag
 	position: relative;
 	float: left;
 	margin-right: 10px;
@@ -40,7 +84,7 @@ span.number
 	border-width: 37px 15px 18px;
 	border-style: solid;
 	border-color: #009dd1 #009dd1 transparent;
-span.number::after
+span.number-flag::after
 	display: block;
 	content: "1";
 	position: absolute;
@@ -59,7 +103,7 @@ h3
 	font-size: 25px;
 	font-weight: 400;
 	line-height: 20px;
-	
+
 	
 .population
 	margin: 20px 0;
@@ -76,9 +120,79 @@ h3
 		font-size: 20px;
 	h3
 		margin-bottom: 10px;
-	span.number::after
+	span.number-flag::after
 		content: "2";
 	.temporary
 		border: 1px solid black;
 		margin-top: 20px;
 		height: 150px;
+
+.infographics
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	color: #ffffff;
+	h4
+		padding-left: 60px;
+		text-transform: uppercase;
+		font-size: 30px;
+		font-weight: 400;
+		letter-spacing: 1px;
+	p
+		padding-left: 60px;
+		font-size: 26px;
+		font-weight: 300;
+	div
+		padding: 10px 0px;
+		position: relative;
+		@include mobile-layout
+			margin-bottom: 20px;
+
+span.number
+	display: block;
+	width: 50px;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	font-size: 36px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	span
+		position: absolute;
+		top: calc(50% - 27px);
+		left: 18px;
+
+.capital
+	background: linear-gradient(45deg, #39b5e3, #009dd1);
+
+.currency
+	background: linear-gradient(45deg, #ffa240, #ff833a);
+
+.language
+	background: linear-gradient(45deg, #f56883, #e04156);
+
+.landmark
+	background: linear-gradient(45deg, #2ee2ac, #00c888);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
