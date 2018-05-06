@@ -6,7 +6,7 @@ $white: #ffffff;
 $country-font: 'Yanone Kaffeesatz', sans-serif;
 
 @mixin mobile-layout
-	@media (max-width: 750px){@content;}
+	@media (max-width: 777px){@content;}
 @mixin large-screen-layout
 	@media (min-width: 1000px){@content;}
 
@@ -15,38 +15,69 @@ $country-font: 'Yanone Kaffeesatz', sans-serif;
 	margin: 0;
 
 nav
-	a.home
+	a.home-link
 		position: absolute;
 		left: 50px;
 		bottom: 30px;
-	a.home:hover
+	a.home-link:hover
 		text-decoration: underline;
+
+
 
 .wrapper
 	background: radial-gradient(circle, #f4f9fa, #cae3e4);
-	
+
+@keyframes fadeIn
+	from 
+		opacity: 0;
+	to
+		opacity: 1;
+
+
+p.tittle-country-page
+	position: absolute;
+	left: calc(50vw + 137px);
+	top: 23px;
+	padding: 2px 5px 5px 5px;
+	background: #1d7ada;
+	color: white;
+	text-transform: lowercase;
+	width: 55px;
+	letter-spacing: 1px;
+	font-size: 14px;
+	line-height: 16px;
+	border-radius: 2px;
+	z-index: 0;
+	animation: left-to-right linear 0.5s;
+	@include mobile-layout
+		top: 10px;
+		left: calc(50vw + 90px);
+
 main.country
-	height: calc(100vh - 173px);
+	height: calc(100vh - 113px);
 	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
 	padding: 20px;
-	padding-bottom: 80px;
 	font-family: $country-font;
+	animation: fadeIn 3.5s;
 	@include large-screen-layout
 		width: 1000px;
-		margin: 10px auto;
+		margin: 0 auto;
+		margin-top: 10px;
+		margin-bottom: 0px;
 	@include mobile-layout
 		height: auto;
 		max-width: 500px;
-		margin: 10px auto;
+		margin: 0 auto;
+		margin-top: 10px;
 		flex-direction: column;
+		align-items: center;
 main.country>div
 	width: 31%;
 	@include mobile-layout
 		width: 100%;
 main div.flag-and-map
-	text-align: center;
 	width: 220px;
 	display: flex;
 	justify-content: space-between;
@@ -59,15 +90,16 @@ main div.flag-and-map
 		width: 100%;
 		margin-bottom: 50px;
 		border: 1px solid #605F60;
+		&:hover
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			cursor: pointer;
 		@include mobile-layout
 			width: 220px;
 			border: none;
-			margin-left: calc(100% - 110px;)
 	img.map
 		width:  100%;
 		@include mobile-layout
 			width: 220px;
-			margin-left: calc(100% - 110px;)
 
 .country-name
 	display: flex;
@@ -122,10 +154,38 @@ h3
 		margin-bottom: 10px;
 	span.number-flag::after
 		content: "2";
-	.temporary
-		border: 1px solid black;
-		margin-top: 20px;
-		height: 150px;
+	.chart
+		background: url('../img/chart-bg.png');
+		margin-top: 10px;
+		font-size: 20px;
+		.religion-type
+			display: block;
+			margin-bottom: 5px;
+			padding: 3px;
+		.religion-type:first-child
+			width: 46%;
+			background: linear-gradient(45deg, #39b5e3, #009dd1);
+		.religion-type:nth-child(3)
+			width: 24%;
+			background: linear-gradient(45deg, #ffa240, #ff833a);
+		.religion-type:nth-child(5)
+			width: 18%;
+			background: linear-gradient(45deg, #f56883, #e04156);
+		.religion-type:nth-child(7)
+			width: 10%;
+			background: linear-gradient(45deg, #2ee2ac, #00c888);
+		.religion-type:nth-child(9)
+			width: 2%;
+			background: linear-gradient(45deg, #39b5e3, #009dd1);
+		.percentage
+			margin-top: -30px;
+			float: right;
+			width: 30px;
+	span.religion-type:hover
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		cursor: pointer;
+
+		
 
 .infographics
 	display: flex;
@@ -145,6 +205,9 @@ h3
 	div
 		padding: 10px 0px;
 		position: relative;
+		&:hover
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			cursor: pointer;
 		@include mobile-layout
 			margin-bottom: 20px;
 

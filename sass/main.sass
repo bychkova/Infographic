@@ -5,17 +5,8 @@ $light: #d9d9d9;
 $white: #ffffff;
 
 
-/*@mixin for-phone-only
-	@media (max-width: 425px){@content;}
-	@mixin for-tablet-up
-	@media (min-width: 426px){@content;}
-	@mixin for-desktop-up
-	@media (min-width: 769px){@content;}
-	@mixin for-desktop-large
-	@media (min-width: 1141px){@content;}*/
-
 @mixin mobile-layout
-	@media (max-width: 750px){@content;}
+	@media (max-width: 777px){@content;}
 @mixin large-screen-layout
 	@media (min-width: 1000px){@content;}
 
@@ -132,7 +123,7 @@ body
 
 div.main-screen
 	height: 100vh;
-	display: none;
+	//display: none;
 /*header and navigation style*/
 header
 	position: relative;
@@ -166,8 +157,10 @@ header
 		@include mobile-layout
 			visibility: hidden;
 	nav
-		position: absolute;
-		width: 300px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 280px;
 		height: 100vh;
 		background: rgba(0,0,0,0.9);
 		padding-top: 20vh;
@@ -243,16 +236,16 @@ header
 			z-index: 0;
 			//transition: 1s;
 			animation: left-to-right linear 0.5s;
-			display: none;
+			//display: none;
 			@include mobile-layout
 				top: 10px;
 				left: calc(50vw + 90px);
 
 	div.email
-		position: absolute;
+		position: fixed;
 		right: 0;
 		top: 0;
-		width: 300px;
+		width: 280px;
 		height: 100vh;
 		background: rgba(0,0,0,0.9);
 		padding-top: 40vh;
@@ -292,7 +285,7 @@ main
 		background: url("../img/main-screen-banner.jpg") no-repeat;
 		background-size: cover;
 		animation: fade-out linear 1.5s;
-		display: none;
+		//display: none;
 		@include mobile-layout
 			margin-top: 20px;
 	.content
@@ -367,7 +360,18 @@ footer
 
 /*end footer style*/
 
+/*404 error style*/
+div.error
+	width: 100vw;
+	height: 100vh;
+	background: radial-gradient(circle, #f4f9fa, #cae3e4);
+	text-align: center;
+	h1
+		font-size: 35vh;
+	h2
+		font-size: 8vh;
 
+/*end 404 error style*/
 
 
 

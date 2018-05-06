@@ -1,11 +1,3 @@
-/*@mixin for-phone-only
-	@media (max-width: 425px){@content;}
-	@mixin for-tablet-up
-	@media (min-width: 426px){@content;}
-	@mixin for-desktop-up
-	@media (min-width: 769px){@content;}
-	@mixin for-desktop-large
-	@media (min-width: 1141px){@content;}*/
 * {
   padding: 0;
   margin: 0; }
@@ -181,8 +173,7 @@ body {
     height: 50vh; } }
 
 div.main-screen {
-  height: 100vh;
-  display: none; }
+  height: 100vh; }
 
 /*header and navigation style*/
 header {
@@ -199,7 +190,7 @@ header {
     border: none;
     outline: none;
     cursor: pointer; }
-    @media (max-width: 750px) {
+    @media (max-width: 777px) {
       header button.location {
         top: 10px;
         left: 20px; } }
@@ -215,12 +206,14 @@ header {
     border: none;
     outline: none;
     cursor: pointer; }
-    @media (max-width: 750px) {
+    @media (max-width: 777px) {
       header button.contacts {
         visibility: hidden; } }
   header nav {
-    position: absolute;
-    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     padding-top: 20vh;
@@ -279,7 +272,7 @@ header {
     font-size: 30px;
     letter-spacing: 10px;
     padding-top: 30px; }
-    @media (max-width: 750px) {
+    @media (max-width: 777px) {
       header .title h1 {
         letter-spacing: 0px;
         padding-top: 20px; } }
@@ -300,18 +293,17 @@ header {
             border-radius: 2px;
     z-index: 0;
     -webkit-animation: left-to-right linear 0.5s;
-            animation: left-to-right linear 0.5s;
-    display: none; }
-    @media (max-width: 750px) {
+            animation: left-to-right linear 0.5s; }
+    @media (max-width: 777px) {
       header .title p.hidden-tittle {
         top: 10px;
         left: -webkit-calc(50vw + 90px);
         left: calc(50vw + 90px); } }
   header div.email {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
-    width: 300px;
+    width: 280px;
     height: 100vh;
     background: rgba(0, 0, 0, 0.9);
     padding-top: 40vh;
@@ -351,9 +343,8 @@ main .background-img {
   -webkit-background-size: cover;
           background-size: cover;
   -webkit-animation: fade-out linear 1.5s;
-          animation: fade-out linear 1.5s;
-  display: none; }
-  @media (max-width: 750px) {
+          animation: fade-out linear 1.5s; }
+  @media (max-width: 777px) {
     main .background-img {
       margin-top: 20px; } }
 
@@ -371,7 +362,7 @@ main .content {
     main .content {
       margin-left: 15%;
       margin-right: 15%; } }
-  @media (max-width: 750px) {
+  @media (max-width: 777px) {
     main .content {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -382,7 +373,7 @@ main .content {
   main .content div.information {
     margin-top: 20px;
     width: 60%; }
-    @media (max-width: 750px) {
+    @media (max-width: 777px) {
       main .content div.information {
         width: 100%; } }
     main .content div.information p {
@@ -421,7 +412,7 @@ main .content {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
-    @media (max-width: 750px) {
+    @media (max-width: 777px) {
       main .content div.services {
         width: 100%;
         height: auto; } }
@@ -439,7 +430,7 @@ footer {
   border-top: 1px solid grey;
   padding: 10px;
   text-align: center; }
-  @media (max-width: 750px) {
+  @media (max-width: 777px) {
     footer {
       padding-bottom: 30px; } }
   footer a {
@@ -451,3 +442,17 @@ footer {
     text-decoration: underline; }
 
 /*end footer style*/
+/*404 error style*/
+div.error {
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-radial-gradient(circle, #f4f9fa, #cae3e4);
+  background: -o-radial-gradient(circle, #f4f9fa, #cae3e4);
+  background: radial-gradient(circle, #f4f9fa, #cae3e4);
+  text-align: center; }
+  div.error h1 {
+    font-size: 35vh; }
+  div.error h2 {
+    font-size: 8vh; }
+
+/*end 404 error style*/
